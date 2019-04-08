@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn" monitorInterval="30">-->
+    <Properties>
+        <property name="LOG_HOME" value="/httx/logs"/>
+        <property name="OUT_FILE" value="provider.log"/>
+        <property name="LOG_PATTERN_COMMON"
+                  value="[%d{yyyy-MM-dd HH:mm:ss.SSS}][%p][%t][%c:%L][%logger{36}][%X{PtxId}][%X{PspanId}] - %m%n"/>
+    </Properties>
+    <appenders>
+        <console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN_COMMON}"/>
+        </console>
+        <File name="FILE-OUT" fileName="${LOG_HOME}/${OUT_FILE}">
+            <PatternLayout pattern="${LOG_PATTERN_COMMON}"/>
+        </File>
+    </appenders>
+    <loggers>
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="FILE-OUT"/>
+        </root>
+    </loggers>
+</configuration>
