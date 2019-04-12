@@ -15,6 +15,7 @@ public class ProviderController {
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Integer add(@RequestParam("a") Integer a, @RequestParam("b") Integer b) {
+        log.info("start>>>");
         log.info("provider add param > a:{},b:{}", a, b);
         return a + b;
     }
